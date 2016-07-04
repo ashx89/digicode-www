@@ -12,13 +12,10 @@
   "author": "Ashley J. Taylor",
   "license": "ISC",
   "devDependencies": {
-    "async": "^2.0.0-rc.6",
     "casperjs": "^1.1.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "merge-stream": "^1.0.0",
-    "yadda": "^0.17.10"
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2"
   }
 }

@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var rename = require('gulp-rename');
+var livereload = require('gulp-livereload');
 
 var paths = {
 	images: {
@@ -24,6 +24,14 @@ var paths = {
 };
 
 /**
+ * Watch task
+ */
+gulp.task('default', function () {
+	livereload.listen();
+	gulp.watch(paths.sass.input, ['sass']);
+});
+
+/**
  * Compile and copy SCSS to dist
  */
 gulp.task('sass', function () {
@@ -32,11 +40,5 @@ gulp.task('sass', function () {
 			.on('error', sass.logError))
 		.pipe(concat('main.css'))
 		.pipe(gulp.dest(paths.sass.output))
-});
-
-/**
- * Watch task
- */
-gulp.task('watch', function () {
-	gulp.watch(paths.sass.input, ['sass']);
+		.pipe(livereload());
 });
